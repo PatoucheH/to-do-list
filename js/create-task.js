@@ -1,4 +1,6 @@
+import { changeArray } from "./change-array.js";
 import { deleteTask } from "./delete-task.js";
+
 /**
  *  Create the li to add to the list
  * @returns a li to add to a ul within a check the task and a delete button
@@ -17,6 +19,7 @@ export function createTask() {
   check.addEventListener("click", (e) => {
     newLi.classList.toggle("active");
     buttonDelete.classList.toggle("active");
+    changeArray(newLi);
   });
 
   const buttonDelete = document.createElement("button");

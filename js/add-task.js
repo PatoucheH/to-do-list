@@ -7,9 +7,12 @@ import { updateLocalStorage } from "./update-storage.js";
  */
 
 export function addTask(li) {
-  const textP = li.querySelector(".text-task");
-
-  list.appendChild(li);
-  tasks.push(textP.innerText);
-  updateLocalStorage();
+  const text = li.querySelector(".text-task").innerText;
+  if (tasks.includes(text)) {
+    alert("Tâche déjà ajouté ! ");
+  } else {
+    list.appendChild(li);
+    tasks.push(text);
+    updateLocalStorage();
+  }
 }
